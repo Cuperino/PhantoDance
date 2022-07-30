@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="PhantoSign"
+config/name="PhantoDance"
+config/description="Villagers dance with their ancestor's ghosts to honor their lives"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
