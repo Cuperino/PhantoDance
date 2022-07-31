@@ -47,7 +47,18 @@ class main(Node):
 #				print("working")
 				results = pose.process(image)
 
-				print(results.pose_landmarks) #, mp_pose.POSE_CONNECTIONS)
+				#print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_EYE])
+				#print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_EYE])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_SHOULDER])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_ELBOW])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_ELBOW])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_THUMB])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_THUMB])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_INDEX])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_INDEX])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_PINKY])
+				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_PINKY])
 				#print(results.pose_landmarks.get(14))
 
 				## Draw the pose annotation on the image.
