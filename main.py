@@ -47,18 +47,18 @@ class main(Node):
 				if results.pose_landmarks is not None:
 					skeleton = main.get_node(self, "Player").get_node("Skeleton2D")
 					map = (
-						(8, mp_pose.PoseLandmark.LEFT_SHOULDER),
-						(9, mp_pose.PoseLandmark.LEFT_ELBOW),
+						#(8, mp_pose.PoseLandmark.LEFT_SHOULDER),
+						#(9, mp_pose.PoseLandmark.LEFT_ELBOW),
 						(10, mp_pose.PoseLandmark.LEFT_WRIST),
-						(11, mp_pose.PoseLandmark.RIGHT_SHOULDER),
-						(12, mp_pose.PoseLandmark.RIGHT_ELBOW),
+						#(11, mp_pose.PoseLandmark.RIGHT_SHOULDER),
+						#(12, mp_pose.PoseLandmark.RIGHT_ELBOW),
 						(13, mp_pose.PoseLandmark.RIGHT_WRIST)
 					)
 					for BONE_ID, BODY_PART in map:
 						bone = skeleton.get_bone(BONE_ID)
 						initial_pos = bone.get_skeleton_rest()
 						body_part_pos = results.pose_landmarks.landmark[BODY_PART]
-						transformation = initial_pos.translated(Vector2(body_part_pos.x/10000, body_part_pos.y/10000))
+						transformation = initial_pos.translated(Vector2(body_part_pos.x, body_part_pos.y))
 						print(BODY_PART, initial_pos, transformation)
 						print(body_part_pos)
 						bone.set_rest(transformation)
