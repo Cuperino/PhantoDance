@@ -3,9 +3,14 @@
 [ext_resource path="res://images/dancer_ghost_reference.png" type="Texture" id=1]
 [ext_resource path="res://images/dancer_ghost_parts.png" type="Texture" id=2]
 
-[node name="Polygons" type="Node2D"]
+[node name="Ghost" type="Node2D"]
 
-[node name="DancerGhostReference" type="Sprite" parent="."]
+[node name="Polygons" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DancerGhostReference" type="Sprite" parent="Polygons"]
 position = Vector2( 1, -131 )
 scale = Vector2( 0.159668, 0.159668 )
 texture = ExtResource( 1 )
@@ -13,33 +18,33 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Torso" type="Polygon2D" parent="."]
+[node name="Torso" type="Polygon2D" parent="Polygons"]
 position = Vector2( -105, -266.908 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
-polygon = PoolVector2Array( 694.017, -109.089, 1088.75, 147.051, 1179.98, 517.226, 1153.67, 982.139, 1211.56, 1206.7, 1422.09, 1431.26, 1423.84, 1610.21, 1188.75, 1738.28, 879.983, 1647.05, 585.246, 1736.52, 381.737, 1622.49, 95.7719, 1701.44, -70.8947, 1536.52, -55.1053, 1361.09, 116.825, 1168.1, 234.368, 968.104, 167.702, 499.682, 251.912, 131.261 )
+polygon = PoolVector2Array( 694.017, -109.089, 1157.65, 142.502, 1213.97, 521.954, 1153.67, 982.139, 1211.56, 1206.7, 1422.09, 1431.26, 1423.84, 1610.21, 1188.75, 1738.28, 879.983, 1647.05, 585.246, 1736.52, 381.737, 1622.49, 125.152, 1672.75, -70.8947, 1536.52, -55.1053, 1361.09, 116.825, 1168.1, 234.368, 968.104, 167.702, 499.682, 251.912, 131.261 )
 uv = PoolVector2Array( 672.965, -93.3, 1125.6, 124.244, 1227.35, 504.946, 1153.67, 982.139, 1211.56, 1206.7, 1422.09, 1431.26, 1434.37, 1583.89, 1230.86, 1778.63, 865.947, 1729.51, 579.982, 1797.93, 369.456, 1694.42, 64.193, 1768.1, -84.9298, 1578.63, -55.1053, 1361.09, 137.877, 1169.86, 236.123, 978.63, 174.719, 483.893, 313.316, 80.3842 )
 polygons = [ PoolIntArray( 0, 1, 17 ), PoolIntArray( 17, 16, 2, 1 ), PoolIntArray( 16, 15, 3, 2 ), PoolIntArray( 15, 14, 4, 3 ), PoolIntArray( 14, 13, 5, 4 ), PoolIntArray( 13, 12, 6, 5 ), PoolIntArray( 12, 11, 10 ), PoolIntArray( 10, 8, 9 ), PoolIntArray( 8, 6, 7 ), PoolIntArray( 12, 6, 8, 10 ) ]
 
-[node name="EyeR" type="Polygon2D" parent="."]
+[node name="EyeR" type="Polygon2D" parent="Polygons"]
 position = Vector2( -267, -236 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
 polygon = PoolVector2Array( 1399.02, 39.1218, 1578.5, -3.18591, 1619.53, 30.1474, 1647.73, 167.327, 1641.32, 233.994, 1620.81, 327.583, 1579.79, 380.147, 1532.35, 398.096, 1490.04, 396.814, 1428.5, 371.173, 1387.48, 345.532, 1424.18, 310.678, 1406.94, 277.345, 1374.66, 244.25, 1352.86, 214.763, 1343.89, 142.968, 1370.81, 87.8397, 1546.02, 44.0115, 1418.43, 114.126, 1400.04, 149.759, 1393.15, 193.437, 1406.94, 154.356, 1401.19, 194.586 )
 uv = PoolVector2Array( 1399.02, 39.1218, 1578.5, -3.18591, 1619.53, 30.1474, 1647.73, 167.327, 1641.32, 233.994, 1620.81, 327.583, 1579.79, 380.147, 1532.35, 398.096, 1490.04, 396.814, 1428.5, 371.173, 1387.48, 345.532, 1416.97, 322.455, 1391.32, 275.019, 1374.66, 244.25, 1352.86, 214.763, 1343.89, 142.968, 1370.81, 87.8397, 1546.02, 44.0115, 1418.43, 114.126, 1400.04, 149.759, 1393.15, 193.437, 1406.94, 154.356, 1401.19, 194.586 )
-polygons = [ PoolIntArray( 1, 17, 16, 0 ), PoolIntArray( 17, 2, 1 ), PoolIntArray( 17, 18, 16 ), PoolIntArray( 16, 15, 19, 18 ), PoolIntArray( 15, 14, 20, 19 ), PoolIntArray( 14, 13, 12, 20 ), PoolIntArray( 17, 4, 3, 2 ), PoolIntArray( 17, 18, 21, 4 ), PoolIntArray( 21, 22, 5, 4 ), PoolIntArray( 22, 12, 20, 19, 18, 21 ), PoolIntArray( 22, 12, 6, 5 ), PoolIntArray( 12, 11, 6 ) ]
+polygons = [ PoolIntArray( 1, 17, 16, 0 ), PoolIntArray( 17, 2, 1 ), PoolIntArray( 17, 18, 16 ), PoolIntArray( 16, 15, 19, 18 ), PoolIntArray( 15, 14, 20, 19 ), PoolIntArray( 14, 13, 12, 20 ), PoolIntArray( 17, 4, 3, 2 ), PoolIntArray( 17, 18, 21, 4 ), PoolIntArray( 21, 22, 5, 4 ), PoolIntArray( 22, 12, 20, 19, 18, 21 ), PoolIntArray( 22, 12, 6, 5 ), PoolIntArray( 12, 11, 6 ), PoolIntArray( 11, 10, 9, 6 ), PoolIntArray( 9, 6, 7, 8 ) ]
 internal_vertex_count = 6
 
-[node name="EyeL" type="Polygon2D" parent="."]
+[node name="EyeL" type="Polygon2D" parent="Polygons"]
 position = Vector2( -259, -235 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
-polygon = PoolVector2Array( 1685.97, 27.3287, 1732.27, -3.22684, 1892.45, 17.1435, 1914.67, 78.2546, 1951.71, 137.514, 1957.27, 195.847, 1936.9, 233.81, 1901.71, 268.995, 1875.9, 306.08, 1903.49, 348.609, 1880.5, 372.747, 1826.48, 399.184, 1769.01, 398.034, 1732.23, 388.839, 1688.75, 356.032, 1664.67, 283.81, 1656.34, 187.514, 1656.34, 128.255, 1752.92, 42.8621, 1846.02, 55.5058, 1887.4, 122.172, 1902.34, 169.299, 1897.74, 172.747, 1908.09, 200.333, 1900.04, 200.333, 1889.7, 245.161, 1893.15, 245.161 )
+polygon = PoolVector2Array( 1685.97, 27.3287, 1732.27, -3.22684, 1892.45, 17.1435, 1914.67, 78.2546, 1951.71, 137.514, 1957.27, 195.847, 1936.9, 233.81, 1901.71, 268.995, 1875.9, 306.08, 1903.49, 348.609, 1880.5, 372.747, 1841.42, 393.437, 1789.7, 396.885, 1733.38, 385.391, 1688.75, 356.032, 1664.67, 283.81, 1656.34, 187.514, 1656.34, 128.255, 1752.92, 42.8621, 1846.02, 55.5058, 1887.4, 122.172, 1902.34, 169.299, 1897.74, 172.747, 1908.09, 200.333, 1900.04, 200.333, 1889.7, 245.161, 1893.15, 245.161 )
 uv = PoolVector2Array( 1685.97, 27.3287, 1732.27, -3.22684, 1892.45, 17.1435, 1914.67, 78.2546, 1951.71, 137.514, 1957.27, 195.847, 1936.9, 233.81, 1901.71, 268.995, 1883.19, 318.069, 1912.82, 338.44, 1872.08, 375.477, 1815.6, 397.699, 1781.34, 397.699, 1731.34, 393.995, 1688.75, 356.032, 1664.67, 283.81, 1656.34, 187.514, 1656.34, 128.255, 1752.92, 42.8621, 1846.02, 55.5058, 1887.4, 122.172, 1902.34, 169.299, 1897.74, 172.747, 1908.09, 200.333, 1900.04, 200.333, 1889.7, 245.161, 1893.15, 245.161 )
 polygons = [ PoolIntArray( 0, 18, 19, 3, 2, 1 ), PoolIntArray( 19, 3, 4, 20 ), PoolIntArray( 20, 21, 5, 4 ), PoolIntArray( 5, 6, 7, 26, 23, 21 ), PoolIntArray( 17, 20, 19, 18 ), PoolIntArray( 17, 0, 18 ), PoolIntArray( 17, 16, 24, 22, 20 ), PoolIntArray( 25, 24, 22, 20, 21, 23, 26 ), PoolIntArray( 16, 15, 25, 24 ), PoolIntArray( 15, 14, 13, 8, 7, 26, 25 ), PoolIntArray( 8, 13, 12, 11, 10, 9 ) ]
 internal_vertex_count = 9
 
-[node name="Mouth" type="Polygon2D" parent="."]
+[node name="Mouth" type="Polygon2D" parent="Polygons"]
 position = Vector2( -222, -312 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
@@ -47,7 +52,7 @@ polygon = PoolVector2Array( 1317.2, 947.989, 1336.37, 938.822, 1373.87, 990.489,
 uv = PoolVector2Array( 1317.2, 947.989, 1336.37, 938.822, 1373.87, 990.489, 1402.2, 989.656, 1447.2, 939.656, 1463.03, 948.822, 1420.53, 1018.82, 1401.37, 1030.49, 1373.03, 1029.66, 1354.7, 1017.16 )
 polygons = [ PoolIntArray( 0, 1, 2, 9 ), PoolIntArray( 9, 2, 8 ), PoolIntArray( 2, 3, 7, 8 ), PoolIntArray( 3, 6, 7 ), PoolIntArray( 3, 4, 5, 6 ) ]
 
-[node name="ArmR" type="Polygon2D" parent="."]
+[node name="ArmR" type="Polygon2D" parent="Polygons"]
 position = Vector2( -310, -218 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
@@ -55,10 +60,30 @@ polygon = PoolVector2Array( 1542.57, 392.401, 1616.13, 405.045, 1644.87, 496.999
 uv = PoolVector2Array( 1542.57, 392.401, 1616.13, 405.045, 1644.87, 496.999, 1634.53, 621.137, 1600.04, 762.516, 1582.8, 792.401, 1516.13, 883.206, 1493.15, 900.447, 1411.54, 929.183, 1316.13, 892.401, 1332.23, 800.447, 1360.96, 767.114, 1398.89, 730.332, 1418.43, 680.907, 1426.48, 586.654, 1470.16, 464.815 )
 polygons = [ PoolIntArray( 15, 0, 1, 2 ), PoolIntArray( 15, 14, 3, 2 ), PoolIntArray( 14, 13, 4, 3 ), PoolIntArray( 13, 12, 5, 4 ), PoolIntArray( 12, 11, 6, 5 ), PoolIntArray( 10, 11, 6, 7 ), PoolIntArray( 10, 9, 8, 7 ) ]
 
-[node name="ArmL" type="Polygon2D" parent="."]
-position = Vector2( -213, -238 )
+[node name="ArmL" type="Polygon2D" parent="Polygons"]
+position = Vector2( -216, -218 )
 scale = Vector2( 0.159806, 0.160758 )
 texture = ExtResource( 2 )
 polygon = PoolVector2Array( 1682.8, 387.803, 1765.56, 387.803, 1827.63, 472.861, 1859.81, 617.688, 1857.51, 700.447, 1859.81, 726.884, 1881.65, 793.551, 1897.74, 813.091, 1939.12, 900.447, 1832.23, 947.574, 1735.67, 883.206, 1708.09, 846.424, 1670.16, 762.516, 1663.26, 718.838, 1650.62, 630.332, 1647.17, 499.298 )
 uv = PoolVector2Array( 1682.8, 387.803, 1765.56, 387.803, 1827.63, 472.861, 1859.81, 617.688, 1857.51, 700.447, 1859.81, 726.884, 1881.65, 793.551, 1897.74, 813.091, 1939.12, 900.447, 1832.23, 947.574, 1735.67, 883.206, 1708.09, 846.424, 1670.16, 762.516, 1663.26, 718.838, 1650.62, 630.332, 1647.17, 499.298 )
 polygons = [ PoolIntArray( 0, 1, 2, 15 ), PoolIntArray( 15, 14, 3, 2 ), PoolIntArray( 14, 13, 4, 3 ), PoolIntArray( 13, 12, 5, 4 ), PoolIntArray( 12, 11, 6, 5 ), PoolIntArray( 11, 10, 7, 6 ), PoolIntArray( 10, 9, 8, 7 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 0, -69 )
+rotation = -1.57079
+default_length = 12.0
+
+[node name="Torso" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2( 12, -2.67029e-05 )
+default_length = 57.0
+
+[node name="Neck" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
+position = Vector2( 48, 0.999893 )
+
+[node name="ArmL" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
+position = Vector2( 68.0001, 60.9998 )
+rotation = 3.05157
+scale = Vector2( 0.509847, -134.992 )
+default_length = 64.0
