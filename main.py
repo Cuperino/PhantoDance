@@ -58,10 +58,11 @@ class main(Node):
 						bone = skeleton.get_bone(BONE_ID)
 						initial_pos = bone.get_skeleton_rest()
 						body_part_pos = results.pose_landmarks.landmark[BODY_PART]
-						transformation = initial_pos.translated(Vector2(body_part_pos.x, body_part_pos.y))
-						print(BODY_PART, initial_pos, transformation)
-						print(body_part_pos)
+						position = Vector2(initial_pos.origin.x * body_part_pos.y, initial_pos.origin.y * body_part_pos.x)
+						transformation = Transform2D(Vector2(1, 0), Vector2(0, 1), position)
+						#transformation = initial_pos*initial_pos.translated(Vector2(body_part_pos.x, body_part_pos.y))
+						#print(BODY_PART, initial_pos, transformation)
+						#print(body_part_pos)
 						bone.set_rest(transformation)
-						bone.apply_rest()
 
 		return False

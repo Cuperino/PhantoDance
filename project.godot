@@ -8,12 +8,68 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "HistoryEntry",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/resources/HistoryEntry.gd"
+}, {
+"base": "Object",
+"class": "Parser",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/systems/Parser.gd"
+}, {
+"base": "Node",
+"class": "RakuScriptDialogue",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/nodes/RakuScriptDialogue.gd"
+}, {
+"base": "Resource",
+"class": "Store",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/resources/Store.gd"
+}, {
+"base": "Resource",
+"class": "StoreStack",
+"language": "GDScript",
+"path": "res://addons/Rakugo/lib/resources/StoreStack.gd"
+} ]
+_global_script_class_icons={
+"HistoryEntry": "",
+"Parser": "",
+"RakuScriptDialogue": "",
+"Store": "",
+"StoreStack": ""
+}
+
+[addons]
+
+rakugo/game_version="1.0.0"
+rakugo/force_reload=false
+rakugo/auto_mode_delay=3
+rakugo/skip_delay=0.5
+rakugo/rollback_steps=10
+rakugo/history_length=30
+rakugo/narrator/name="narrator"
+rakugo/debug=false
+rakugo/save_folder="res://saves"
+rakugo/test_mode=false
+
 [application]
 
 config/name="PhantoDance"
 config/description="Villagers dance with their ancestor's ghosts to honor their lives"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Rakugo="*res://addons/Rakugo/Rakugo.tscn"
+Settings="*res://addons/Rakugo/Settings.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Rakugo/plugin.cfg" )
 
 [gdnative]
 
