@@ -38,40 +38,30 @@ class main(Node):
 					print("Ignoring empty camera frame.")
 					# If loading a video, use 'break' instead of 'continue'.
 					return False
-					#return True
 
 				# To improve performance, optionally mark the image as not writeable to
 				# pass by reference.
 				image.flags.writeable = False
 				image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-#				print("working")
 				results = pose.process(image)
+				if results.pose_landmarks is not None:
+					skeleton = main.get_node(self, "Player").get_node("Skeleton2D")
+					map = (
+						(8, mp_pose.PoseLandmark.LEFT_SHOULDER),
+						(9, mp_pose.PoseLandmark.LEFT_ELBOW),
+						(10, mp_pose.PoseLandmark.LEFT_WRIST),
+						(11, mp_pose.PoseLandmark.RIGHT_SHOULDER),
+						(12, mp_pose.PoseLandmark.RIGHT_ELBOW),
+						(13, mp_pose.PoseLandmark.RIGHT_WRIST)
+					)
+					for BONE_ID, BODY_PART in map:
+						bone = skeleton.get_bone(BONE_ID)
+						initial_pos = bone.get_skeleton_rest()
+						body_part_pos = results.pose_landmarks.landmark[BODY_PART]
+						transformation = initial_pos.translated(Vector2(body_part_pos.x/10000, body_part_pos.y/10000))
+						print(BODY_PART, initial_pos, transformation)
+						print(body_part_pos)
+						bone.set_rest(transformation)
+						bone.apply_rest()
 
-				#print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_EYE])
-				#print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_EYE])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_SHOULDER])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_ELBOW])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_ELBOW])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_THUMB])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_THUMB])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_INDEX])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_INDEX])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_PINKY])
-				print(results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_PINKY])
-				#print(results.pose_landmarks.get(14))
-
-				## Draw the pose annotation on the image.
-				#image.flags.writeable = True
-				#image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-				#mp_drawing.draw_landmarks(
-				#	image,
-				#	results.pose_landmarks,
-				#	mp_pose.POSE_CONNECTIONS,
-				#	landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-				## Flip the image horizontally for a selfie-view display.
-				#cv2.imshow('MediaPipe Pose', cv2.flip(image, 1))
-				#if cv2.waitKey(5) & 0xFF == 27:
-				#	return
 		return False
-		 

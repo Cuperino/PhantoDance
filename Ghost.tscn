@@ -1,15 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://images/dancer_ghost_reference.png" type="Texture" id=1]
 [ext_resource path="res://images/dancer_ghost_parts.png" type="Texture" id=2]
 
-[sub_resource type="Shader" id=1]
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-
 [node name="Ghost" type="Node2D"]
-material = SubResource( 2 )
 
 [node name="Polygons" type="Node2D" parent="."]
 __meta__ = {
@@ -135,15 +129,14 @@ default_length = 64.0
 
 [node name="ForearmL" type="Bone2D" parent="Skeleton2D/Hip/Torso/ArmL"]
 position = Vector2( 77.2593, -0.00430265 )
-rotation = 0.000566153
+rotation = 0.000261653
 scale = Vector2( 0.824395, 2.96038 )
 rest = Transform2D( 0.824395, 0.000466734, -0.00167603, 2.96038, 77.2593, -0.00430265 )
 default_length = 50.0
 
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/Torso/ArmL/ForearmL"]
 position = Vector2( 62.8691, 0.00682569 )
-rotation = 0.000655662
-scale = Vector2( 1, 1 )
+rotation = 0.000196339
 rest = Transform2D( 1, 0.000655662, -0.000655662, 1, 62.8691, 0.00682569 )
 default_length = 29.0
 
@@ -155,11 +148,11 @@ default_length = 40.0
 
 [node name="ForearmR" type="Bone2D" parent="Skeleton2D/Hip/Torso/ArmR"]
 position = Vector2( 43.8584, -2.53826 )
-rotation = 0.0828505
+rotation = -0.0547306
 rest = Transform2D( 0.99657, 0.0827558, -0.0827558, 0.99657, 43.8584, -2.53826 )
 default_length = 25.0
 
 [node name="HandR" type="Bone2D" parent="Skeleton2D/Hip/Torso/ArmR/ForearmR"]
 position = Vector2( 25.71, 3.46339 )
-rotation = 0.754895
+rotation = 0.272844
 rest = Transform2D( 0.728344, 0.685212, -0.685212, 0.728344, 25.71, 3.46339 )
